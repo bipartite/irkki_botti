@@ -1,0 +1,134 @@
+
+/*
+ * CommandHandler.cpp
+ *
+ *  Created on: 12.11.2008
+ *      Author: Patsa
+ */
+
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include "commandHandler.hh"
+
+using std::string;
+
+
+
+CommandHandler::CommandHandler() {}
+
+CommandHandler::~CommandHandler() {}
+
+
+
+string CommandHandler::setUMode(string channel, string command, string nick, string nickHost, string target) {
+	
+	std::ostringstream oss;
+
+  // Seuraaviin komentoihin tarvitsee user-valtuudet
+	if (command == "op" || command == "deop" || command == "voice" || command == "devoice" || command == "kick" || command == "addUser" || command == "addAutoOp" || command == "addAutoVoice" || command == "removeUser" || command == "removeAutoOp" || command == "removeAutoVoice" || command == "join" || command == "leave" || command == "leave") {
+		if (auth.isUser(nickHost)) {
+			if (command == "op") 	  
+				return "mode " + channel + " +o " + target + "\r\n";
+      
+			if (command == "voice")
+			return "mode " + channel + " +v " + target + "\r\n";
+      
+			if (command == "deop")
+			return "mode " + channel + " -o " + target + "\r\n";
+	    
+			if (command == "devoice")
+			return "mode " + channel + " -v " + target + "\r\n";
+      
+	     		if (command == "kick")
+				return "kick " + channel + " " + target + "\r\n";
+      
+	    	 	if (command == "addUser") {
+				if (!auth.addUser(target))
+			  		return "PRIVMSG " + channel + " :" + nick + ": An error occured while adding user " + target + "\r\n"; 
+				return "PRIVMSG " + channel + " :" + nick + ": user " + target + " added\r\n";
+			}
+      
+			if (command == "addAutoOp") {
+				if (!auth.addAutoOp(channel, target))
+					return "PRIVMSG " + channel + " :" + nick + ": An error occured while adding the autoOp-status on " + target + "\r\n"; 
+				return "PRIVMSG " + channel + " :" + nick + ": AutoOp-status added for " + target + "\r\n";
+			}
+      
+			if (command == "addAutoVoice") {
+				if (!auth.addAutoVoice(channel, target))
+					return "PRIVMSG " + channel + " :" + nick + ": An error occured while adding the autoVoice-status on " + target + "\r\n"; 
+				return "PRIVMSG " + channel + " :" + nick + ": AutoVoice-status added for " + target + "\r\n";
+			}
+      
+			if (command == "removeUser") {
+				if (!auth.removeUser(target))
+					return "PRIVMSG " + channel + " :" + nick + ": An error occured while removing user " + target + "\r\n"; 
+				return "PRIVMSG " + channel + " :" + nick + ": User " + target + " was removed\r\n";
+			}
+      
+			if (command == "removeAutoOp") {
+				if (!auth.removeAutoOp(channel, target))
+					return "PRIVMSG " + channel + " :" + nick + ": An error occured while removing user " + target + "\r\n";
+				return "PRIVMSG " + channel + " :" + nick + ": AutoOp-status of " + target + " was removed\r\n";
+			}
+      		
+			if (command == "removeAutoVoice") {
+				if (!auth.removeAutoVoice(channel, target))
+					return "PRIVMSG " + channel + " :" + nick + ": An error occured while removing user " + target + "\r\n";
+				return "PRIVMSG " + channel + " :" + nick + ": AutoVoice-status of " + target + " was removed\r\n";
+			}	
+      	
+			if (command == "join") {
+				return "JOIN " + target + "\r\n";
+			}
+      
+			if (command == "leave" || command == "part") {
+				return "PART " + target + "\r\n";
+			}
+		}
+		else 
+      			return "PRIVMSG " + channel + " :" + nick + ": you dont have the authority to do that\r\n";
+ 	}
+  
+	return "PRIVMSG " + channel + " :" + nick + ": unknown command\r\n";
+}
+
+
+
+string CommandHandler::joinEvent(string channel, string nick, string host) {
+  //Authority-luokan getAutoStatus() -funktio palauttaa arvon 2, mik‰li k‰ytt‰j‰ll‰ on auto-op status, 1 mik‰li autoVoice ja 0 jollei mit‰‰n.
+	int status = auth.getAutoStatus(channel, host);
+  
+	switch (status) {
+	case 1:
+		return "mode " + channel + " +v " + nick + "\r\n";
+	case 2:
+		return "mode " + channel + " +o " + nick + "\r\n";
+	}
+	return "";
+}
+
+
+
+string CommandHandler::addQuote(string channel, string quote) {
+  if (quote == "")
+    return "PRIVMSG " + channel + " :Enter a proper quote\r\n";
+  if (quotes.addQuote(quote))
+    return "PRIVMSG " + channel + " :Quote added\r\n";
+  return "PRIVMSG " + channel + " :Failed to add quote\r\n";
+}
+
+
+
+string CommandHandler::getQuote(string channel) {
+  return "PRIVMSG " + channel + " :" + quotes.getQuote() + "\r\n";
+}
+
+
+
+string CommandHandler::removeLastQuote(string channel) {
+  if (quotes.removeLastQuote())
+    return "PRIVMSG " + channel + " :Quote removed\r\n";
+  return "PRIVMSG " + channel + " :Removing quote failed\r\n";
+}

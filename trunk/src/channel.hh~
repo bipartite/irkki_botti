@@ -1,0 +1,20 @@
+#ifndef CHANNEL_HH
+#define CHANNEL_HH
+
+#include <list>
+
+
+class Channel
+{
+	private:
+		std::string server, botname;
+		std::list<std::string> channelList;
+
+	public:
+		Channel(std::string, std::string);
+		void addChannel(std::string);
+		void removeChannel(std::string);
+
+};
+
+#endif

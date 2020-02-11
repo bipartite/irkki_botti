@@ -1,0 +1,42 @@
+/*
+ * CommandHandler.hh
+ *
+ *  Created on: 12.11.2008
+ *      Author: Patsa
+ */
+
+#ifndef COMMANDHANDLER_HH_
+#define COMMANDHANDLER_HH_
+
+#include "authority.hh"
+#include "quotes.hh"
+#include <string>
+
+using std::string;
+
+class CommandHandler {
+public:
+  
+  CommandHandler();
+  ~CommandHandler();
+  
+  string setUMode(string channel, string command, string nick, string host, string target);
+  string joinEvent(string channel, string nick, string host);
+  string addQuote(string channel, string quote);
+  string getQuote(string channel);
+  string removeLastQuote(string channel);
+  /*  std::string pong(std::string ping);
+	std::string op(std::string channel, std::string nick);
+	std::string voice(std::string channel, std::string nick);
+	std::string deop(std::string channel, std::string nick);
+	std::string devoice(std::string channel, std::string nick);
+	std::string kick(std::string channel, std::string nick);
+	std::string joinChannel(std::string channel, std::string nick);
+*/
+
+private:
+  Authority auth;
+  Quotes quotes;
+};
+
+#endif /* COMMANDHANDLER_H_ */

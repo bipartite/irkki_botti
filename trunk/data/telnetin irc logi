@@ -1,0 +1,34 @@
+Trying 82.130.15.164...
+Connected to mursu.dyndns.org.
+Escape character is '^]'.
+:mursu.dyndns.org NOTICE AUTH :*** Looking up your hostname...
+:mursu.dyndns.org NOTICE AUTH :*** Found your hostname (cached)
+USER juha * * : juha keponen
+NICK juha
+:mursu.dyndns.org 001 juha :Welcome to the mursunet IRC Network juha!juha@unknown
+:mursu.dyndns.org 002 juha :Your host is mursu.dyndns.org, running version Unreal3.2.7
+:mursu.dyndns.org 003 juha :This server was created Mon Nov 17 2008 at 12:35:55 EET
+:mursu.dyndns.org 004 juha mursu.dyndns.org Unreal3.2.7 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGj
+:mursu.dyndns.org 005 juha NAMESX SAFELIST HCN MAXCHANNELS=10 CHANLIMIT=#:10 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 WALLCHOPS :are supported by this server
+:mursu.dyndns.org 005 juha WATCH=128 SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(ohv)@%+ CHANMODES=beIqa,kfL,lj,psmntirRcOAQKVCuzNSMTG NETWORK=mursunet CASEMAPPING=ascii EXTBAN=~,cqnr ELIST=MNUCT STATUSMSG=@%+ EXCEPTS INVEX :are supported by this server
+:mursu.dyndns.org 005 juha CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+:mursu.dyndns.org 251 juha :There are 1 users and 1 invisible on 1 servers
+:mursu.dyndns.org 252 juha 1 :operator(s) online
+:mursu.dyndns.org 254 juha 2 :channels formed
+:mursu.dyndns.org 255 juha :I have 2 clients and 0 servers
+:mursu.dyndns.org 265 juha :Current Local Users: 2  Max: 2
+:mursu.dyndns.org 266 juha :Current Global Users: 2  Max: 2
+:mursu.dyndns.org 422 juha :MOTD File is missing
+:juha MODE juha :+iwx
+JOIN #testikanava
+:juha!juha@rox-6F5A7E44 JOIN :#testikanava
+:mursu.dyndns.org 353 juha = #testikanava :juha @Jukepoxi
+:mursu.dyndns.org 366 juha #testikanava :End of /NAMES list.
+PRIVSMG #testikanava :heipä hei
+:mursu.dyndns.org 421 juha PRIVSMG :Unknown command
+PRIVMSG #testikanava :testi
+:Jukepoxi!jkeponen@rox-1524C4B7.hut.fi PRIVMSG #testikanava :pll
+:Jukepoxi!jkeponen@rox-1524C4B7.hut.fi PRIVMSG #testikanava :juha: kohdennettu
+QUIT so long suckers
+ERROR :Closing Link: juha[unknown] (Quit: so long suckers)
+Connection closed by foreign host.

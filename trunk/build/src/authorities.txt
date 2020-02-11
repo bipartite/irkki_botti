@@ -1,0 +1,5 @@
+users:
+jkeponen@vipunen.hut.fi
+autoOp:
+autoVoice:
+END

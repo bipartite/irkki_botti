@@ -1,0 +1,32 @@
+#ifndef PARSER_HH
+#define PARSER_HH
+
+#include "commandHandler.hh"
+
+#include <string>
+#include <vector>
+
+using std::string;
+
+class Parser
+{
+public:
+  Parser();
+  Parser(string, string);
+
+  string parse(string);
+  string joinch(string);	//listätty
+
+private:
+  CommandHandler handler;
+  bool connected;
+  string botName, server;
+  std::vector<string> channelvec;	//listätty
+  string channel, command, host, nick, target;
+  
+  string simplify(string);
+  string parseHost(string);
+  string parseNick(string);
+};
+
+#endif

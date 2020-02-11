@@ -1,0 +1,25 @@
+#include "channel.hh"
+
+Channel::Channel(std::string server, std::string botname): server(server), botname(botname) {}
+//näistä pitäisi sitten kutsua handlerista aina kun liitytään tai poistutaan
+void Channel::addChannel(std::string str)
+{
+	this.channelList.push_back(str);
+}
+
+void Channel::removeChannel(std::string str)
+{
+	this.channelList.remove(str);
+}
+
+std::string joinAllChannel()
+{
+	std::ostringstream ostring;
+	for(std::list<std::string>::iterator it = this.channelList.begin(); it != this.channelList.end(); ++it)
+	{
+		ostring << "JOIN " + *it + "\r\n";
+
+	}
+	return ostring.str()
+}
+

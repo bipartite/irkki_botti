@@ -1,0 +1,113 @@
+#include "parser.hh"
+
+#include <iostream>
+#include <sstream>
+#include <string>
+
+using std::string;
+
+Parser::Parser() : connected(false), botName("JTTBot"), server("irc.cs.hut.fi") {}
+Parser::Parser(string botName, string server) : connected(false), botName(botName), server(server) {}
+
+
+string Parser::parse(string str) {
+  
+  std::istringstream iss(str);
+
+  std::vector<string> strVec;
+  string tmp;
+  while (iss >> tmp) {
+    strVec.push_back(tmp);
+  }
+  
+  /*
+  //Tulostaa listan kehityst√§/testausta varten
+  for(unsigned int i = 0; i < strVec.size(); i++) {
+    std::cout << i << ": " << strVec[i] << std::endl;
+  }
+  std::cout << std::endl;
+  */
+  
+  //Ohjelma ei halua k‰sitell‰ liian pieni‰ syˆtteit‰, joten estet‰‰n ne jo t‰ss‰ vaiheessa
+  if (strVec.size() < 1)
+    return "";
+
+
+  //serverin PING-komentoon vastaaminen on niin triviaalia, ettei sit‰ kannata kierr‰tt‰‰ commandHandlerin kautta
+  
+  if (strVec[0] == "PING") {
+    return "PONG " + server + "\r\n";
+  } 
+
+  //erotellaan muiden k√§ytt√§jien  kanavalle liittymis -ilmoitukset 
+  //t‰ss‰ syˆtteest‰ parsitun kanavan nimen edess‰ on kaksoispiste, mik‰ pit‰‰ saada pois
+  //ts. syˆte on muotoa ":nick!host JOIN :kanava"
+  if (strVec[1] == "JOIN") {
+    channel = simplify(strVec[2]);
+    host = parseHost(strVec[0]);
+    nick = parseNick(strVec[0]);
+    return handler.joinEvent(channel, nick, host);
+  }
+
+  
+  if (strVec.size() >= 4 && strVec[3] == ":" + botName) {
+    channel = strVec[2];
+    host = parseHost(strVec[0]);
+    nick = parseNick(strVec[0]);
+    
+    //tarkistetaan aluksi onko kyseess‰ quote-komento
+    if (strVec.size() >=  5) {
+      command = strVec[4];
+      if (command == "addQuote") {
+	string quote;
+	for (unsigned int i = 5; i < strVec.size(); i++)
+	  quote += strVec.at(i) + " ";
+	return handler.addQuote(channel, quote);
+      }
+      if (command == "getQuote")
+	return handler.getQuote(channel);
+      if (command == "removeLastQuote")
+	return handler.removeLastQuote(channel);
+    }
+
+    //muuten vektorissa tavara muodossa 0::nick!host, 1:"PRIVMSG", 2:kanava, 3:botin nick, 4:komento, 5:kohteen nick
+    if (strVec.size() != 6) {
+      return "PRIVMSG " + strVec[2] + " :Give commands in the following form:  <bot's nick> <command> <target>\r\n";      
+    }
+    
+    target = strVec[5];
+
+    return handler.setUMode(channel, command, nick, host, target);
+  }
+
+  return "";
+}
+
+
+
+//poistaa ik√§v√§t kaksoispisteet string-muuttujien edest√§
+string Parser::simplify(string str) {
+  return str.substr(1, str.size());
+}
+
+
+
+//funktio parsii nickin nick-hostin ketjusta
+string Parser::parseNick(string str) {
+  //etsit√§√§n :Esim!eaesim@palvelin.fi -muotoisesta hostista nick
+  size_t end = str.find_first_of('!') - 1;
+  return str.substr(1, end);
+}
+
+
+
+//toimii samoin kuin parseNick, mutta parsii hostin
+string Parser::parseHost(string str) {
+  size_t begin = str.find_first_of('!') + 1;
+  return str.substr(begin, str.size());
+}
+
+string Parser::joinch(string str)
+{
+	return "JOIN "+ str + "\r\n";
+}

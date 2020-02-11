@@ -1,0 +1,50 @@
+Trying 130.233.48.241...
+Connected to irc.tt.hut.fi.
+Escape character is '^]'.
+:irc.cs.hut.fi 020 * :Please wait while we process your connection.
+USER juha * * : juha keponen
+NICK jukepoxi__
+:irc.cs.hut.fi 001 jukepoxi__ :Welcome to the Internet Relay Network jukepoxi__!~juha@geb4.kyla.fi
+:irc.cs.hut.fi 002 jukepoxi__ :Your host is irc.cs.hut.fi, running version 2.11.1p1
+:irc.cs.hut.fi 003 jukepoxi__ :This server was created Tue Jun 19 2007 at 07:15:46 EEST
+:irc.cs.hut.fi 004 jukepoxi__ irc.cs.hut.fi 2.11.1p1 aoOirw abeiIklmnoOpqrRstv
+:irc.cs.hut.fi 005 jukepoxi__ RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:21 NICKLEN=15 TOPICLEN=160 KICKLEN=160 MAXLIST=beIR:42 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqr :are supported by this server
+:irc.cs.hut.fi 005 jukepoxi__ PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=IRCNet :are supported by this server
+:irc.cs.hut.fi 042 jukepoxi__ 2460AFTXP :your unique ID
+:irc.cs.hut.fi 251 jukepoxi__ :There are 82721 users and 7 services on 43 servers
+:irc.cs.hut.fi 252 jukepoxi__ 149 :operators online
+:irc.cs.hut.fi 254 jukepoxi__ 43353 :channels formed
+:irc.cs.hut.fi 255 jukepoxi__ :I have 4006 users, 0 services and 4 servers
+:irc.cs.hut.fi 265 jukepoxi__ 4006 4012 :Current local users 4006, max 4012
+:irc.cs.hut.fi 266 jukepoxi__ 82721 105142 :Current global users 82721, max 105142
+:irc.cs.hut.fi 375 jukepoxi__ :- irc.cs.hut.fi Message of the Day -
+:irc.cs.hut.fi 372 jukepoxi__ :- 2/10/2002 22:31
+:irc.cs.hut.fi 372 jukepoxi__ :-        Helsinki University of Technology
+:irc.cs.hut.fi 372 jukepoxi__ :-           Internet Relay Chat Server
+:irc.cs.hut.fi 372 jukepoxi__ :-
+:irc.cs.hut.fi 372 jukepoxi__ :-        CS Lab has an EFNet server at efnet.cs.hut.fi.
+:irc.cs.hut.fi 372 jukepoxi__ :-
+:irc.cs.hut.fi 372 jukepoxi__ :-        Please read the following document about securing your computer:
+:irc.cs.hut.fi 372 jukepoxi__ :-        http://www.cert.org/tech_tips/home_networks.html
+:irc.cs.hut.fi 372 jukepoxi__ :-
+:irc.cs.hut.fi 372 jukepoxi__ :-        These simple rules still apply:
+:irc.cs.hut.fi 372 jukepoxi__ :-        NO BOTS FROM OUTSIDE OF HUT.FI.
+:irc.cs.hut.fi 372 jukepoxi__ :-        NO MULTIPLE BOTS.
+:irc.cs.hut.fi 372 jukepoxi__ :-        NO PIRACY.
+:irc.cs.hut.fi 372 jukepoxi__ :-
+:irc.cs.hut.fi 372 jukepoxi__ :-        And remember, the ability to use this server
+:irc.cs.hut.fi 372 jukepoxi__ :-        is a PRIVILEGE, not a right.
+:irc.cs.hut.fi 372 jukepoxi__ :-
+:irc.cs.hut.fi 372 jukepoxi__ :-        -- apl --
+:irc.cs.hut.fi 376 jukepoxi__ :End of MOTD command.
+:jukepoxi__ MODE jukepoxi__ :+i
+:irc.cs.hut.fi NOTICE jukepoxi__ :Server is currently in split-mode.
+JOIN #bottirojekti
+:jukepoxi__!~juha@geb4.kyla.fi JOIN :#bottirojekti
+:irc.cs.hut.fi 332 jukepoxi__ #bottirojekti :Tiistaina 12.15 maarin aulassa
+:irc.cs.hut.fi 333 jukepoxi__ #bottirojekti Patsa!tnolvi@topaasi.hut.fi 1224845602
+:irc.cs.hut.fi 353 jukepoxi__ = #bottirojekti :jukepoxi__ Pungero^ Jukepoxi Patsa
+:irc.cs.hut.fi 366 jukepoxi__ #bottirojekti :End of NAMES list.
+PRIVMSG #bottirojekti kokelin vaa telnetillä irkkii
+PRIVMSG #bottirojekti :vaa telnetillä irkkii
+QUIT

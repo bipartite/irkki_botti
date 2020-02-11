@@ -1,0 +1,159 @@
+Näkymä irssistä:
+
+19:15 -!- JTTBot [taromppa@asterix.hut.fi] has joined #testi1
+19:15 -!- mode/#testi1 [+o JTTBot] by Pungero
+19:16 <@Pungero> JTTBot addAutoOp tnolvi@topaasi.hut.fi
+19:16 <@JTTBot> Pungero: AutoOp-status added for tnolvi@topaasi.hut.fi
+19:17 -!- Pungero was kicked from #testi1 by Pungero [no reason]
+19:17 -!- Pungero [taromppa@kosh.hut.fi] has joined #testi1
+19:17 [Users #testi1]
+19:17 [@JTTBot] [@Jukepoxi] [ Pungero] 
+19:17 -!- Irssi: #testi1: Total of 3 nicks [2 ops, 0 halfops, 0 voices, 1 normal]
+19:17 -!- Irssi: Join to #testi1 was synced in 1 secs
+19:17 -!- Patsa [tnolvi@topaasi.hut.fi] has joined #testi1
+19:18 -!- mode/#testi1 [+o Patsa] by JTTBot
+19:18 < Pungero> JTTBot op Pungero
+19:18 -!- mode/#testi1 [+o Pungero] by JTTBot
+19:19 <@Pungero> JTTBot addUser tnolvi@topaasi.hut.fi
+19:19 <@JTTBot> Pungero: user tnolvi@topaasi.hut.fi added
+19:19 <@Pungero> haluutko Juhaki leikkii?
+19:20 <@Patsa> JTTBot addQuote haluutko Juhaki leikkii?
+19:20 <@JTTBot> Quote added
+19:20 <@Jukepoxi> myÃķhemmi meen syÃķmÃĪÃĪ
+19:20 <@Pungero> JTTBot join #bottirojekti
+19:20 <@Pungero> JTTBot leave #bottirojekti
+19:21 <@Pungero> JTTBot getQuote
+19:21 <@JTTBot> haluutko Juhaki leikkii? 
+19:23 <@Pungero> JTTBot removeLastQuote
+19:23 <@JTTBot> Quote removed
+19:24 <@Pungero> JTTBot getQuote
+19:24 <@JTTBot> No quotes found
+19:24 <@Pungero> JTTBot removeUser taromppa@kosh.hut.fi
+19:24 <@JTTBot> Pungero: User taromppa@kosh.hut.fi was removed
+19:24 <@Pungero> JTTBot kick Patsa
+19:24 <@JTTBot> Pungero: you don't have the authority to do that
+19:24 <@Pungero> :/
+19:25 <@Patsa> JTTBot kick Pungero 
+19:25 -!- Pungero was kicked from #testi1 by JTTBot [no reason]
+19:25 -!- JTTBot [taromppa@asterix.hut.fi] has quit [EOF From client]
+
+
+Ja botin vinkkelistä:
+
+
+Enter irc-server: (irc.cs.hut.fi by default)
+
+Enter port: (6667 by default)
+
+Enter a nick for the bot: (JTTBot by default)
+
+Enter irc-channels (separate with spaces):
+#testi1
+Authority::load() called
+authorities.txt not found. Enter your host (eq. userName@vipunen.hut.fi) 
+taromppa@kosh.hut.fi
+Authority::save() called
+Quotes-object created
+loadQuotes() called
+quotes.txt not found.
+connecting..
+connected
+:irc.cs.hut.fi 020 * :Please wait while we process your connection.
+ERROR :Closing Link: JTTBot[taromppa@130.233.248.194] (Unauthorized connection)
+
+reconnecting...
+connected
+:irc.cs.hut.fi 020 * :Please wait while we process your connection.
+:irc.cs.hut.fi 001 JTTBot :Welcome to the Internet Relay Network JTTBot!taromppa@asterix.hut.fi
+:irc.cs.hut.fi 002 JTTBot :Your host is irc.cs.hut.fi, running version 2.11.1p1
+:irc.cs.hut.fi 003 JTTBot :This server was created Tue Jun 19 2007 at 07:15:46 EEST
+:irc.cs.hut.fi 004 JTTBot irc.cs.hut.fi 2.11.1p1 aoOirw abeiIklmnoOpqrRstv
+:irc.cs.hut.fi 005 JTTBot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:21 NICKLEN=15 TOPICLEN=160 KICKLEN=160 MAXLIST=beIR:42 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqr :are supported by this server
+:irc.cs.hut.fi 005 JTTBot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=IRCNet :are supported by this server
+:irc.cs.hut.fi 042 JTTBot 2460AF9TN :your unique ID
+:irc.cs.hut.fi 251 JTTBot :There are 88063 users and 7 services on 43 servers
+:irc.cs.hut.fi 252 JTTBot 139 :operators online
+:irc.cs.hut.fi 253 JTTBot 1 :unknown connections
+:irc.cs.hut.fi 254 JTTBot 46217 :channels formed
+:irc.cs.hut.fi 255 JTTBot :I have 4002 users, 0 services and 3 servers
+:irc.cs.hut.fi 265 JTTBot 4002 4012 :Current local users 4002, max 4012
+:irc.cs.hut.fi 266 JTTBot 88063 105142 :Current global users 88063, max 105142
+:irc.cs.hut.fi 375 JTTBot :- irc.cs.hut.fi Message of the Day - 
+:irc.cs.hut.fi 372 JTTBot :- 2/10/2002 22:31
+:irc.cs.hut.fi 372 JTTBot :- 	Helsinki University of Technology
+:irc.cs.hut.fi 372 JTTBot :- 	   Internet Relay Chat Server
+:irc.cs.hut.fi 372 JTTBot :- 
+:irc.cs.hut.fi 372 JTTBot :- 	CS Lab has an EFNet server at efnet.cs.hut.fi.
+:irc.cs.hut.fi 372 JTTBot :- 
+:irc.cs.hut.fi 372 JTTBot :- 	Please read the following document about securing your computer:
+:irc.cs.hut.fi 372 JTTBot :- 	http://www.cert.org/tech_tips/home_networks.html
+:irc.cs.hut.fi 372 JTTBot :- 	
+:irc.cs.hut.fi 372 JTTBot :- 	These simple rules still apply:
+:irc.cs.hut.fi 372 JTTBot :- 	NO BOTS FROM OUTSIDE OF HUT.FI.
+:irc.cs.hut.fi 372 JTTBot :- 	NO MULTIPLE BOTS.
+:irc.cs.hut.fi 372 JTTBot :- 	NO PIRACY.
+:irc.cs.hut.fi 372 JTTBot :- 
+:irc.cs.hut.fi 372 JTTBot :- 	And remember, the ability to use this server
+:irc.cs.hut.fi 372 JTTBot :- 	is a PRIVILEGE, not a right.
+:irc.cs.hut.fi 372 JTTBot :- 
+:irc.cs.hut.fi 372 JTTBot :- 	-- apl --
+:irc.cs.hut.fi 376 JTTBot :End of MOTD command.
+:JTTBot MODE JTTBot :+i
+:JTTBot!taromppa@asterix.hut.fi JOIN :#testi1
+:irc.cs.hut.fi 353 JTTBot = #testi1 :JTTBot @Pungero @Jukepoxi 
+:irc.cs.hut.fi 366 JTTBot #testi1 :End of NAMES list.
+:Pungero!taromppa@kosh.hut.fi MODE #testi1 +o JTTBot 
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot addAutoOp tnolvi@topaasi.hut.fi
+Authority::save() called
+tnolvi@topaasi.hut.fi saved to autoOp-list in channel #testi1
+PRIVMSG #testi1 :Pungero: AutoOp-status added for tnolvi@topaasi.hut.fi
+:Pungero!taromppa@kosh.hut.fi KICK #testi1 Pungero :no reason
+:Pungero!taromppa@kosh.hut.fi JOIN :#testi1
+PING :irc.cs.hut.fi
+PONG irc.cs.hut.fi
+:Patsa!tnolvi@topaasi.hut.fi JOIN :#testi1
+mode #testi1 +o Patsa
+:JTTBot!taromppa@asterix.hut.fi MODE #testi1 +o Patsa 
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot op Pungero
+mode #testi1 +o Pungero
+:JTTBot!taromppa@asterix.hut.fi MODE #testi1 +o Pungero 
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot addUser tnolvi@topaasi.hut.fi
+Authority::save() called
+tnolvi@topaasi.hut.fi saved to users-list
+PRIVMSG #testi1 :Pungero: user tnolvi@topaasi.hut.fi added
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :haluutko Juhaki leikkii?
+PING :irc.cs.hut.fi
+PONG irc.cs.hut.fi
+:Patsa!tnolvi@topaasi.hut.fi PRIVMSG #testi1 :JTTBot addQuote haluutko Juhaki leikkii?
+saveQuotes() called
+PRIVMSG #testi1 :Quote added
+:Jukepoxi!jkeponen@vipunen.hut.fi PRIVMSG #testi1 :myöhemmi meen syömää
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot join #bottirojekti
+JOIN #bottirojekti
+:JTTBot!taromppa@asterix.hut.fi JOIN :#bottirojekti
+:irc.cs.hut.fi 353 JTTBot = #bottirojekti :JTTBot Patsa Jukepoxi Pungero 
+:irc.cs.hut.fi 366 JTTBot #bottirojekti :End of NAMES list.
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot leave #bottirojekti
+PART #bottirojekti
+:JTTBot!taromppa@asterix.hut.fi PART #bottirojekti :
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot getQuote
+PRIVMSG #testi1 :haluutko Juhaki leikkii? 
+PING :irc.cs.hut.fi
+PONG irc.cs.hut.fi
+PING :irc.cs.hut.fi
+PONG irc.cs.hut.fi
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot removeLastQuote
+saveQuotes() called
+PRIVMSG #testi1 :Quote removed
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot getQuote
+PRIVMSG #testi1 :No quotes found
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot removeUser taromppa@kosh.hut.fi
+Authority::save() called
+taromppa@kosh.hut.fi removed from users
+PRIVMSG #testi1 :Pungero: User taromppa@kosh.hut.fi was removed
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 :JTTBot kick Patsa
+PRIVMSG #testi1 :Pungero: you don't have the authority to do that
+:Pungero!taromppa@kosh.hut.fi PRIVMSG #testi1 ::/
+:Patsa!tnolvi@topaasi.hut.fi PRIVMSG #testi1 :JTTBot kick Pungero 
+kick #testi1 Pungero
+:JTTBot!taromppa@asterix.hut.fi KICK #testi1 Pungero :no reason

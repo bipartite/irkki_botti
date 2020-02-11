@@ -1,0 +1,67 @@
+P‰vitetty 23.12.2008.
+
+Botin komennot ja toiminnot
+
+Tiedostot:
+authorities.txt
+	Tiedostoon on eritelty botin k‰ytt‰j‰t ja kanavakohtaisesti auto-opin tai auto-voicen saavat henkilˆt.
+	Formaatti on seuraava: Tiedosto alkaa rivill‰ "users:" jonka j‰lkeen botin k‰yttˆoikeuden omaavien
+	hostit on lueteltu seuraavilla riveill‰. K‰ytt‰j‰t loppuvat riviin "autoOp:" jonka j‰lkeen on
+	riveitt‰in lueteltu kanava ja host, mik‰li k‰ytt‰j‰ll‰ on oikeus saada auto-op kanavalle liittyess‰‰n.
+	Seuraava osio alkaa rivist‰ "autoVoice:" johon on samoin lueteltu kanavat ja k‰ytt‰j‰t. Tiedosto
+	loppuu riviin "END".
+
+quotes.txt
+	Tiedosto on luettelo bottin kirjatuista lainauksista. Tiedosto alkaa rivill‰ "BEGIN" ja loppuu riviin
+	"END". N‰iden rivien v‰liin on listattu lainaukset, yksi joka riville.
+
+
+Komennot:
+Ennen kaikkia komentoja on kirjoitettava Botin nick, jotta botti tajuaa, ett‰ sit‰ kutsutaan.
+
+Seuraavia komentoja voivat kaikki k‰ytt‰‰:
+	addQuote <quote>
+		Lis‰‰ quoten botin tietokantaan
+	getQuote
+		Botti hakee tietokannasta random-quoten
+	
+Quotet eiv‰t riipu kanavasta, joten jos botti on useammalla kanavalla, voi k‰ytt‰j‰ saada botilta toisella
+kanavalla lis‰tyn quoten.
+
+Seuraavat komennot ovat vain botin k‰ytt‰jien k‰ytett‰viss‰:
+
+N‰m‰ eiv‰t varmaan kaipaa esittely‰, toimivat sill‰ kanavalla miss‰ komento kirjoitetaan
+	 op <nick>
+	 deop <nick>
+	 voice <nick>
+	 devoice <nick>
+	 kick <nick>
+
+Seuraavat komennot lis‰‰v‰t/poistavat hostin botin tietokantaan. Hostin avulla botti tunnistaa k‰ytt‰j‰t.
+	 addUser <host>
+	 addAutoOp <host>
+	 addAutoVoice <host>
+	 removeUser <host>
+	 removeAutoOp <host>
+	 removeAutoVoice <host>
+
+	 join <kanava>
+		Botti liittyy uudelle kanavalle
+	 leave <kanava>
+	 part <kanava>
+		Identtiset komennot, botti l‰htee kanavalta.
+
+        removeLastQuote
+                Komento poistaa viimeiseksi lis‰tyn quoten. N‰inollen quote-tiedostoa ei tarvitse manuaalisesti
+                muokata, kun joku esim. k‰mm‰‰ lis‰ystoiminnon kanssa tai quoten sis‰lt‰m‰ linkki on vanhentunut
+                jne
+	loadQuotes <tiedostn nimi>
+		Yhdist‰‰ toisen quotetiedoston quotet tietokantaan. Toiminto edellytt‰‰ toistaiseksi, ett‰ tiedosto
+		on oikeassa formaatissa (formaatti selitetty ylemp‰n‰).
+
+Testatut ja korjatut bugit
+	 Quotes-toiminnon avulla ei voi muiluttaa bottia. esim "JTTBot addQuote \r\n PART #bottirojekti :moro
+	 \r\n" ei saa bottia j‰tt‰m‰‰n kanavaa.
+
+TODO lista:
+	Ban? (aika turha, mut periaatteessa perustoimito)
